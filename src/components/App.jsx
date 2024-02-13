@@ -1,43 +1,83 @@
-import React from 'react';
-import ContactForm from './ContactForm/ContactForm';
-import ContactList from './ContactList/ContactList';
-import Filter from './Filter/Filter';
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  selectContacts,
-  selectIsLoading,
-  selectError,
-} from '../redux/selectors';
-import { fetchContacts } from '../redux/operations';
+import { Routes, Route } from 'react-router-dom';
+import { lazy } from 'react';
+
+import SharedLayout from './SharedLayout/SharedLayout';
+import RestrictedRoute from './RestrictedRoute/RestrictedRoute';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+
+const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
+const HomePage = lazy(() => import('pages/HomePage'));
+const LoginPage = lazy(() => import('pages/LoginPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage'));
+const ContactList = lazy(() => import('./ContactList/ContactList'));
 
 const App = () => {
-  const contacts = useSelector(selectContacts);
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  // const contacts = useSelector(selectContacts);
+  // const isLoading = useSelector(selectIsLoading);
+  // const error = useSelector(selectError);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   return (
-    <div className="contact-container">
-      <h1>Phonebook</h1>
-      <ContactForm />
-      {isLoading && !error && <b>Request in progress...</b>}
-      {contacts.length === 0 ? (
-        ''
-      ) : (
-        <>
-          <h2>Contacts</h2>
-          <Filter />
-          <ContactList />
-        </>
-      )}
-    </div>
+    <Routes>
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<HomePage />} />
+        <Route
+          path="login"
+          element={
+            <RestrictedRoute>
+              <LoginPage />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="register"
+          element={
+            <RestrictedRoute>
+              <RegisterPage />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute>
+              <ContactList />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <RestrictedRoute>
+              <NotFoundPage />
+            </RestrictedRoute>
+          }
+        />
+      </Route>
+    </Routes>
   );
 };
 
 export default App;
+
+{
+  /* <div className="contact-container">
+  <h1>Phonebook</h1>
+  <ContactForm />
+  {isLoading && !error && <b>Request in progress...</b>}
+  {contacts.length === 0 ? (
+    ''
+  ) : (
+    <>
+      <h2>Contacts</h2>
+      <Filter />
+      <ContactList />
+    </>
+  )}
+</div> */
+}
