@@ -1,0 +1,13 @@
+.nav_auth {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav_auth-link {
+}
+
+.nav_auth-link-item {
+}

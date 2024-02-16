@@ -9,10 +9,8 @@ const ContactList = () => {
 
   return (
     <ol>
-      {filteredContacts.map(({ id, name, phone, createdAt }) => {
-        return (
-          <ContactListItem key={createdAt} name={name} number={phone} id={id} />
-        );
+      {filteredContacts.map(({ id, name, number }) => {
+        return <ContactListItem key={id} name={name} number={number} id={id} />;
       })}
     </ol>
   );

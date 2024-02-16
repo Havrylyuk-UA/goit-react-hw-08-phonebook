@@ -1,7 +1,7 @@
 const HomePage = params => {
   return (
     <>
-      <p style={{ textAlign: 'center', color: '#fff' }}>HomePage</p>
+      <p style={{ textAlign: 'center' }}>HomePage</p>
     </>
   );
 };

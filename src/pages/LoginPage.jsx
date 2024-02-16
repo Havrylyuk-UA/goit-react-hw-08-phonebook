@@ -1,22 +1,31 @@
+import LoginForm from 'components/LoginForm/LoginForm';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectAuthError,
+  selectAuthLoading,
+} from '../redux/auth/auth-selectors';
+import { login } from '../redux/auth/auth-operations';
+
 const LoginPage = () => {
+  const authLoading = useSelector(selectAuthLoading);
+  const authError = useSelector(selectAuthError);
+
+  const dispatch = useDispatch();
+
+  const handleLogin = user => {
+    dispatch(login(user));
+  };
+
   return (
-    <form>
-      <div>
-        <label>Name:</label>
-        <input type="text" name="name" />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input type="text" name="email" />
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="text" name="password" />
-      </div>
-      <div>
-        <button>Login</button>
-      </div>
-    </form>
+    <div>
+      {authLoading && <p>...Loading in progress</p>}
+
+      <LoginForm onSubmit={handleLogin} />
+
+      {authError && (
+        <p style={{ color: 'red', textAlign: 'center' }}>{authError}</p>
+      )}
+    </div>
   );
 };
 
