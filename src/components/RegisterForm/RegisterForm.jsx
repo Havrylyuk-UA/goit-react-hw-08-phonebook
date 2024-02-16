@@ -1,7 +1,7 @@
 import { useId, useState } from 'react';
 
 const INITIAL_STATE = {
-  neme: '',
+  name: '',
   email: '',
   password: '',
 };
