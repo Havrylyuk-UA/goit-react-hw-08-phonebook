@@ -1,5 +1,7 @@
 import { useState, useId } from 'react';
 
+import './LoginForm.css';
+
 const INITIAL_STATE = {
   email: '',
   password: '',
@@ -35,9 +37,10 @@ const LoginForm = ({ onSubmit }) => {
 
   return (
     <form className="login_form" onSubmit={handleSubmit}>
-      <div>
+      <div className="login_form-item">
         <label htmlFor={emailId}>Email:</label>
         <input
+          className="login_form-input"
           type="email"
           name="email"
           value={email}
@@ -46,9 +49,10 @@ const LoginForm = ({ onSubmit }) => {
           required
         />
       </div>
-      <div>
-        <label htmlFor={passwordId}>Password</label>
+      <div className="login_form-item">
+        <label htmlFor={passwordId}>Password:</label>
         <input
+          className="login_form-input"
           type="password"
           name="password"
           value={password}
@@ -57,8 +61,8 @@ const LoginForm = ({ onSubmit }) => {
           required
         />
       </div>
-      <div>
-        <button>Login</button>
+      <div className="login_form-item">
+        <button className="login_form-btn">Login</button>
       </div>
     </form>
   );

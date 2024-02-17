@@ -40,7 +40,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <form onSubmit={handlePushForm}>
+      <form onSubmit={handlePushForm} className="contact_form">
         <label>
           <legend>Name</legend>
           <input type="text" name="name" required />

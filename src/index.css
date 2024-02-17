@@ -1,11 +1,42 @@
-body {
-  box-sizing: border-box;
-  width: 100vw;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.login_form {
+body {
+  box-sizing: border-box;
+  background-color: #1a202c;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sharedlayout_container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.sharedlayout_outlet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_page-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 45px;
+  padding: 15px;
+
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px aquamarine;
 }

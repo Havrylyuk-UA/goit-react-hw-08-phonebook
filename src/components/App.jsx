@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux';
 import { current } from '../redux/auth/auth-operations';
 
 const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
-const HomePage = lazy(() => import('pages/HomePage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 const ContactForm = lazy(() => import('./ContactForm/ContactForm'));
@@ -23,7 +22,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<LoginPage />} />
         <Route element={<RestrictedRoute />}>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
