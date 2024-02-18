@@ -39,28 +39,40 @@ const ContactForm = () => {
   };
 
   return (
-    <>
+    <div className="contacts_page-container">
       <form onSubmit={handlePushForm} className="contact_form">
-        <label>
-          <legend>Name</legend>
-          <input type="text" name="name" required />
+        <label className="contact_form-label">
+          <legend className="contact_form-legend">Name: </legend>
+          <input
+            className="contact_form-inp"
+            type="text"
+            name="name"
+            required
+          />
         </label>
-        <label>
-          <legend>Number</legend>
-          <input type="tel" name="number" required />
+        <label className="contact_form-label">
+          <legend className="contact_form-legend">Number: </legend>
+          <input
+            className="contact_form-inp"
+            type="tel"
+            name="number"
+            required
+          />
         </label>
-        <button type="submit">Add contact</button>
+        <button type="submit" className="contact_form-btn">
+          Add contact
+        </button>
       </form>
       {contacts.length === 0 ? (
         ''
       ) : (
-        <>
+        <div className="contacts_page-contacts-con">
           <h2>Contacts</h2>
           <Filter />
           <ContactList />
-        </>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 

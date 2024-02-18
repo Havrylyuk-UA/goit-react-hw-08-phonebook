@@ -1,0 +1,35 @@
+.contact_list-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+  gap: 10px;
+}
+
+.contact_list-item {
+  list-style: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+.delete-btn {
+  margin-left: auto;
+
+  background-color: inherit;
+
+  color: #fff;
+
+  border-radius: 5px;
+
+  border: none;
+}
+
+.delete-btn:hover {
+  color: red;
+  transform: scale(1.2);
+}

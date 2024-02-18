@@ -8,11 +8,11 @@ const ContactList = () => {
   const filteredContacts = useSelector(selectVisibleContacts);
 
   return (
-    <ol>
+    <ul className="contact_list-sheet">
       {filteredContacts.map(({ id, name, number }) => {
         return <ContactListItem key={id} name={name} number={number} id={id} />;
       })}
-    </ol>
+    </ul>
   );
 };
 

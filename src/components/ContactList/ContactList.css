@@ -1,3 +1,19 @@
-.delete-btn {
-  margin-left: 5px;
+.contact_list-sheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: flex-start; */
+
+  gap: 8px;
+
+  overflow-y: auto;
+}
+
+.contact_list-sheet::-webkit-scrollbar {
+  display: none;
+}
+
+.contact_list-sheet {
+  -ms-overflow-style: none;
+  scrollbar-width: 10px;
 }
