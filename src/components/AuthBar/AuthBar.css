@@ -17,3 +17,7 @@
 .nav_auth-link:hover {
   color: aquamarine;
 }
+
+.auth_is-active {
+  color: aquamarine;
+}

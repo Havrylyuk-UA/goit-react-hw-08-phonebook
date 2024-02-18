@@ -1,5 +1,7 @@
 import { useId, useState } from 'react';
 
+import './RegisterForm.css';
+
 const INITIAL_STATE = {
   name: '',
   email: '',
@@ -36,10 +38,11 @@ const RegisterForm = ({ onSubmit }) => {
   const { name, email, password } = user;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} className="signup_form">
+      <div className="signup_form-item">
         <label htmlFor={nameId}>Name:</label>
         <input
+          className="signup_form-input"
           value={name}
           onChange={handleChange}
           name="name"
@@ -47,9 +50,10 @@ const RegisterForm = ({ onSubmit }) => {
           required
         />
       </div>
-      <div>
+      <div className="signup_form-item">
         <label htmlFor={emailId}>Email:</label>
         <input
+          className="signup_form-input"
           value={email}
           onChange={handleChange}
           type="email"
@@ -58,9 +62,10 @@ const RegisterForm = ({ onSubmit }) => {
           required
         />
       </div>
-      <div>
+      <div className="signup_form-item">
         <label htmlFor={passwordId}>Password:</label>
         <input
+          className="signup_form-input"
           value={password}
           onChange={handleChange}
           type="password"
@@ -69,7 +74,11 @@ const RegisterForm = ({ onSubmit }) => {
           required
         />
       </div>
-      <button type="submit">Register</button>
+      <div className="signup_form-item">
+        <button type="submit" className="signup_form-btn">
+          SignUp
+        </button>
+      </div>
     </form>
   );
 };

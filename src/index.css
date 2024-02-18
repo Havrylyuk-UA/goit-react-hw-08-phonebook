@@ -40,3 +40,19 @@ a {
   border-radius: 10px;
   box-shadow: 0px 5px 10px aquamarine;
 }
+
+.signup_page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 45px;
+  padding: 15px;
+
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px aquamarine;
+}

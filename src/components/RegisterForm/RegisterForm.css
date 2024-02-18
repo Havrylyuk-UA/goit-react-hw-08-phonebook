@@ -1,4 +1,4 @@
-.login_form {
+.signup_form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +7,7 @@
   margin-top: 10px;
 }
 
-.login_form-item {
+.signup_form-item {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -16,7 +16,7 @@
   font-size: 18px;
 }
 
-.login_form-input {
+.signup_form-input {
   width: 150px;
   height: 25px;
   padding-left: 15px;
@@ -27,7 +27,7 @@
   outline: none;
 }
 
-.login_form-btn {
+.signup_form-btn {
   margin-top: 5px;
 
   padding: 5px 10px;
@@ -40,7 +40,7 @@
   background-color: inherit;
 }
 
-.login_form-btn:hover {
+.signup_form-btn:hover {
   color: aquamarine;
   border-color: #fff;
   transform: scale(1.1);

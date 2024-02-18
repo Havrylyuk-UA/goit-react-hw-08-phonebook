@@ -19,7 +19,7 @@ const LoginPage = () => {
   return (
     <div className="login_page-container">
       {authLoading && <p>...Loading in progress</p>}
-      <h1>Please Login</h1>
+      <p>Please Login and we show your contacts.</p>
       <LoginForm onSubmit={handleLogin} />
 
       {authError && (

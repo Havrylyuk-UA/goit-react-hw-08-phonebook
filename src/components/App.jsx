@@ -9,7 +9,7 @@ import { current } from '../redux/auth/auth-operations';
 
 const NotFoundPage = lazy(() => import('pages/NotFoundPage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage'));
+const SignUpPage = lazy(() => import('pages/SignUpPage'));
 const ContactForm = lazy(() => import('./ContactForm/ContactForm'));
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
         <Route index element={<LoginPage />} />
         <Route element={<RestrictedRoute />}>
           <Route path="login" element={<LoginPage />} />
-          <Route path="register" element={<RegisterPage />} />
+          <Route path="signup" element={<SignUpPage />} />
         </Route>
         <Route element={<PrivateRoute />}>
           <Route path="contacts" element={<ContactForm />} />
