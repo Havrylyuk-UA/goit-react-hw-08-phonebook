@@ -3,4 +3,21 @@
   gap: 15px;
   justify-content: center;
   align-items: center;
+
+  padding: 15px;
+}
+
+.user_bar-name {
+  font-size: 24px;
+}
+
+.user_bar-btn {
+  font-size: 18px;
+
+  padding: 5px 10px;
+
+  border-radius: 10px;
+  background-color: inherit;
+  border-color: orange;
+  color: #fff;
 }

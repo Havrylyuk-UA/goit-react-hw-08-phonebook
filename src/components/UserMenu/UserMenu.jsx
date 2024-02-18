@@ -12,8 +12,10 @@ const UserMenu = () => {
 
   return (
     <div className="user_bar">
-      <p>{user && user.name}</p>
-      <button onClick={logOut}>Logout</button>
+      <p className="user_bar-name">{user && user.name}</p>
+      <button onClick={logOut} className="user_bar-btn">
+        Logout
+      </button>
     </div>
   );
 };
