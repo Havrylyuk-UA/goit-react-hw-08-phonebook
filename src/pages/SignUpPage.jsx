@@ -5,6 +5,7 @@ import {
 } from '../redux/auth/auth-selectors';
 import { signup } from '../redux/auth/auth-operations';
 import RegisterForm from '../components/RegisterForm/RegisterForm';
+import { OwnSpinner } from 'components/Spiner/OwnSpinner';
 
 const SignUpPage = () => {
   const authLoading = useSelector(selectAuthLoading);
@@ -16,12 +17,17 @@ const SignUpPage = () => {
 
   return (
     <div className="signup_page-container">
-      {authLoading && <p>....Register in progress</p>}
-      <p>SignUp and we will save your contacts for you.</p>
-      <RegisterForm onSubmit={handleSignup} />
-      {authError && (
-        <p style={{ color: 'red', textAlign: 'center' }}>{authError}</p>
+      {authLoading ? (
+        <OwnSpinner />
+      ) : authError ? (
+        <p style={{ color: 'red', textAlign: 'center' }}>
+          This user already exists
+        </p>
+      ) : (
+        <p>SignUp and we will save your contacts for you.</p>
       )}
+
+      <RegisterForm onSubmit={handleSignup} />
     </div>
   );
 };

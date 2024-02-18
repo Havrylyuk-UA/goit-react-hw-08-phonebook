@@ -5,6 +5,7 @@ import {
   selectAuthLoading,
 } from '../redux/auth/auth-selectors';
 import { login } from '../redux/auth/auth-operations';
+import { OwnSpinner } from 'components/Spiner/OwnSpinner';
 
 const LoginPage = () => {
   const authLoading = useSelector(selectAuthLoading);
@@ -18,12 +19,16 @@ const LoginPage = () => {
 
   return (
     <div className="login_page-container">
-      {authLoading && <p>...Loading in progress</p>}
-      {authError ? (
-        <p style={{ color: 'red', textAlign: 'center' }}>{authError}</p>
+      {authLoading ? (
+        <OwnSpinner />
+      ) : authError ? (
+        <p style={{ color: 'red', textAlign: 'center' }}>
+          Email or password is incorrect
+        </p>
       ) : (
-        <p>Please Login and we show your contacts.</p>
+        <p>Please Login and we'll show your contacts.</p>
       )}
+
       <LoginForm onSubmit={handleLogin} />
     </div>
   );

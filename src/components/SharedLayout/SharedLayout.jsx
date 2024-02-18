@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import Navigation from 'components/Navigation/Navigation';
+import { OwnSpinner } from 'components/Spiner/OwnSpinner';
 
 const SharedLayout = () => {
   return (
@@ -8,7 +9,16 @@ const SharedLayout = () => {
       <Navigation />
       <Suspense
         fallback={
-          <p style={{ textAlign: 'center', paddingTop: 65 }}>...Loading page</p>
+          <p
+            style={{
+              paddingTop: 65,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <OwnSpinner />
+          </p>
         }
       >
         <Outlet />

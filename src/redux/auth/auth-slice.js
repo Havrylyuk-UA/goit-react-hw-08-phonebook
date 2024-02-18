@@ -15,9 +15,13 @@ const handlePending = state => {
   state.error = null;
 };
 
-const handleRejected = (state, { payload }) => {
+const handleRejected = (state, action) => {
   state.isLoading = false;
-  state.error = payload;
+  state.error = action.error.message;
+};
+
+export const handleClearError = state => {
+  state.error = null;
 };
 
 const authSlice = createSlice({

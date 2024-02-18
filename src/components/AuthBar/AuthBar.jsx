@@ -1,5 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
 
+import { handleClearError } from '../../redux/auth/auth-slice';
+
 import './AuthBar.css';
 import { useState } from 'react';
 
@@ -18,9 +20,14 @@ const AuthBar = () => {
         <NavLink
           to="/login"
           className={`nav_auth-link ${
-            location.pathname === '/login' ? 'auth_is-active' : ''
+            location.pathname === '/login' || location.pathname === '/'
+              ? 'auth_is-active'
+              : ''
           }`}
-          onClick={handleToggleLink}
+          onClick={() => {
+            handleToggleLink();
+            handleClearError();
+          }}
         >
           Login
         </NavLink>
@@ -31,7 +38,10 @@ const AuthBar = () => {
           className={`nav_auth-link ${
             location.pathname === '/signup' ? 'auth_is-active' : ''
           }`}
-          onClick={handleToggleLink}
+          onClick={() => {
+            handleToggleLink();
+            handleClearError();
+          }}
         >
           Register
         </NavLink>
