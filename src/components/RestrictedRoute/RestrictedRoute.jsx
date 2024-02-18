@@ -4,13 +4,14 @@ import {
   selectAuthToken,
 } from '../../redux/auth/auth-selectors';
 import { Navigate, Outlet } from 'react-router-dom';
+import { OwnSpinner } from 'components/Spiner/OwnSpinner';
 
 const RestrictedRoute = () => {
   const isLogin = useSelector(selectAuthLogin);
   const token = useSelector(selectAuthToken);
 
   if (!isLogin && token) {
-    return <p>...Loading</p>;
+    return <OwnSpinner />;
   }
 
   if (isLogin) {

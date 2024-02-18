@@ -5,8 +5,12 @@
 
 body {
   box-sizing: border-box;
-  background-color: #1a202c;
+  /* background-color: #1a202c; */
   color: #fff;
+
+  background-image: url('../public/img/concepto-fondo-estudio-fondo-oscuro-sala-estudio-cemento-producto_320929-18.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -39,6 +43,8 @@ a {
   border: 1px solid #fff;
   border-radius: 10px;
   box-shadow: 0px 5px 10px aquamarine;
+
+  background-color: #1a202c;
 }
 
 .signup_page-container {
@@ -55,4 +61,6 @@ a {
   border: 1px solid #fff;
   border-radius: 10px;
   box-shadow: 0px 5px 10px aquamarine;
+
+  background-color: #1a202c;
 }
